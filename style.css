@@ -5,7 +5,7 @@
 
   h1 {
     font-weight: bold;
-    color: #000;
+    color: #ffffff;
   }
   
   .bold {
@@ -23,26 +23,27 @@
   
   html {
     background: url(/images/Marvel-Rivals-bg.jpg);
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center; 
     background-attachment: fixed; 
-    height: 100%;
+
     margin: 0;
     padding: 0;
   }
 
   body {
     font-family: helvetica, arial, sans-serif;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     margin: 0;
     padding: 0;  
+
   }
 
   header {
-    border-bottom: 1px solid black;
-    background-color: #fafafa;
     text-align: center;
   }
   
@@ -50,6 +51,8 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    justify-content:flex-end;
+    align-items: center;
   }
 
   .pet-image-container {
@@ -62,7 +65,7 @@
   }
 
   .dashboard {
-    padding:20px;
+    padding-bottom: 30px;
   }
   
   .dashboard div {

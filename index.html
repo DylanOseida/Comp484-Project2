@@ -7,7 +7,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
   </head>
 
@@ -21,12 +20,14 @@
     <main>
       <section class="pet-image-container">
          <!-- Replace pet image with your own pet image -->
-        <img class="pet-image" src="https://i.redd.it/jeff-the-land-shark-marvel-v0-c1rwel2y7qac1.png?width=779&format=png&auto=webp&s=396a5d7a42eec0cec306887267e873890ba8d7bb">
+        <img class="pet-image" src="images/jeff-the-land-shark.png">
       </section>
       <section class="dashboard">
         <div>Name: <strong><span class="name"></span></strong></div>
         <div>Weight: <strong><span class="weight"></span> pounds</strong></div>
         <div>Happiness: <strong><span class="happiness"></span> tail wags (per min)</strong></div>
+        <div>Mood: <strong><span class="mood"></span></strong></div>
+
         <div class="button-container">
           <button class="treat-button">
             Treat
@@ -43,8 +44,11 @@
 
     <!-- Your web-app is https, so your scripts need to be too -->
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"
-            integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
-            crossorigin="anonymous"></script>
+      integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="
+      crossorigin="anonymous">
+    </script>
+
+    <script src="script.js" defer></script>
   </body>
 
 </html>
