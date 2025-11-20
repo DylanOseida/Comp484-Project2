@@ -85,11 +85,18 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     ***********************************************************/
 
     // Add conditional so if weight is lower than zero.
-    if(pet_info.weight == 0 || pet_info.happiness == 0){
+    if(pet_info.weight == 0){
       $('.play-button, .exercise-button').prop('disabled', true) //disable play and exercise button
     }
     else{
       $('.play-button, .exercise-button').prop('disabled', false) //enable play and exercise button
+    }
+
+    if(pet_info.happiness == 0){
+      $('.exercise-button').prop('disabled', true)  //diable exercise button
+    }
+    else{
+      $('.exercise-button').prop('disabled', false) //enable exercise button
     }
 
     if (pet_info.happiness == 0 || pet_info.dirtiness == 0){
