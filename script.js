@@ -7,10 +7,11 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.treat-button').click(clickedTreatButton);
     $('.play-button').click(clickedPlayButton);
     $('.exercise-button').click(clickedExerciseButton);
+    $('.wash-button').click(clickedWahshButton);
   })
   
   // Add a variable "pet_info" equal to a object with the name (string), weight (number), and happiness (number) of your pet
-  var pet_info = {name:"Jeff the Land Shark", weight:1, happiness:1};
+  var pet_info = {name:"Jeff the Land Shark", weight:1, happiness:1, dirtiness: 1};
 
   function clickedTreatButton() {
     
@@ -33,6 +34,9 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     pet_info.weight--;
     $('.pet-image').animate({width: '-=5', height: '-=5'}, 100);
 
+    //Increase pet dirtiness
+    pet_info.dirtiness++;
+
     checkAndUpdatePetInfoInHtml();
   }
   
@@ -49,6 +53,20 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     // Decrease pet weight
     pet_info.weight--;
     $('.pet-image').animate({width: '-=5', height: '-=5'}, 100);
+
+    //Increase pet dirtiness
+    pet_info.dirtiness += 2;
+
+    checkAndUpdatePetInfoInHtml();
+  }
+
+  function clickedWahshButton() {
+
+    // Decrease pet happiness
+    pet_info.happiness--;
+
+    //Decrease pet dirtiness
+    pet_info.dirtiness--;
 
     checkAndUpdatePetInfoInHtml();
   }
@@ -72,6 +90,13 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     }
     else{
       $('.play-button, .exercise-button').prop('disabled', false) //enable play and exercise button
+    }
+
+    if (pet_info.happiness == 0 || pet_info.dirtiness == 0){
+      $('.wash-button').prop('disabled', true) //disable wash button
+    }
+    else{
+      $('.wash-button').prop('disabled', false) //enable wash button
     }
 
     var mood;
@@ -104,5 +129,6 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     $('.name').text(pet_info['name']);
     $('.weight').text(pet_info['weight']);
     $('.happiness').text(pet_info['happiness']);
+    $('.dirtiness').text(pet_info['dirtiness']);
     $('.mood').text($('.pet-image').data('mood'));
   }
